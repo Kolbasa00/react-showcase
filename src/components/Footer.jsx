@@ -4,7 +4,12 @@ function Footer() {
       <div className="py-4 bg-green-900/10">
         <div className="container mx-auto flex justify-between items-center">
           <p>© {new Date().getFullYear()} Copyright Text</p>
-          <a href="#!">Repo</a>
+          <a
+            href="https://github.com/Kolbasa00/react-showcase/tree/main"
+            target="_blank"
+          >
+            Repo
+          </a>
         </div>
       </div>
     </footer>
