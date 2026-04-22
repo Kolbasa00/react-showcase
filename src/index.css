@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  font-family:
+    s-apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
+}
+
+@theme {
+  --animate-show: show 500ms ease-in-out;
+  --animate-alert: alert 250ms ease-in-out;
+
+  @keyframes show {
+    from {
+      top: 70%;
+      opacity: 0;
+    }
+    to {
+      top: 50%;
+      opacity: 1;
+    }
+  }
+
+  @keyframes alert {
+    from {
+      transform: translateY(2rem);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0rem);
+      opacity: 1;
+    }
+  }
+}
