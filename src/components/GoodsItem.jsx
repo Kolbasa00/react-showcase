@@ -10,13 +10,14 @@ function GoodsItem(props) {
     displayAssets,
     addToCart,
   } = props;
+
+  const imageUrl = displayAssets[0].full_background;
+  const fullImageUrl = imageUrl.startsWith("/")
+    ? import.meta.env.BASE_URL + imageUrl.slice(1)
+    : imageUrl;
   return (
     <div className="shadow-xl bg-[#fff] rounded-sm flex flex-col mb-4">
-      <img
-        src={displayAssets[0].full_background}
-        alt={displayName}
-        className="block rounded-sm"
-      />
+      <img src={fullImageUrl} alt={displayName} className="block rounded-sm" />
       <div className="p-6 grow">
         <h3 className="text-2xl font-light mb-2 ">{displayName}</h3>
         <p>{displayDescription}</p>

@@ -11,7 +11,7 @@ function Cart(props) {
     >
       <img
         src="./images/cart-shopping.svg"
-        alt=""
+        alt="cart"
         className="w-[32px] h-[32px] invert"
       />
       {quantity ? <span>{quantity}</span> : null}
