@@ -2,12 +2,12 @@ import { useContext } from "react";
 import { IoClose } from "react-icons/io5";
 import { IoIosRemove } from "react-icons/io";
 import { IoAdd } from "react-icons/io5";
-import { customContext } from "./CartContext";
+import { ShopContext } from "../../context";
 
 function CartItem(props) {
   const { mainId, displayName, price, quantity } = props;
   const { removeFromCart, addQuantityProduct, removeQuantityProduct } =
-    useContext(customContext);
+    useContext(ShopContext);
   return (
     <li className="py-2 px-5 flex justify-between items-center border-b border-gray-200">
       <div className="flex items-center">

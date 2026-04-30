@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { ShopContext } from "../context";
 
-function Alert(props) {
-  const { name = "", closeAlert = Function.prototype } = props;
+function Alert() {
+  const { alertName = "", closeAlert } = useContext(ShopContext);
 
   useEffect(() => {
     const timerId = setTimeout(closeAlert, 3000);
@@ -9,12 +10,12 @@ function Alert(props) {
     return () => {
       clearTimeout(timerId);
     };
-  }, [name]);
+  }, [alertName]);
 
   return (
     <div className="bg-[#323232] text-white fixed top-22 right-35 animate-alert">
       <div className="px-5.5 py-2.5 font-light text-lg">
-        {name} добавлен в корзину
+        {alertName} добавлен в корзину
       </div>
     </div>
   );

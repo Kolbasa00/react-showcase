@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { customContext } from "./CartContext";
+import { ShopContext } from "../../context";
 import { IoClose } from "react-icons/io5";
 import CartItem from "./CartItem";
 
 function CartList() {
-  const { order = [], handleCartShow } = useContext(customContext);
+  const { order = [], handleCartShow } = useContext(ShopContext);
 
   const totalPrice = order.reduce((sum, el) => {
     return sum + el.price.regularPrice * el.quantity;

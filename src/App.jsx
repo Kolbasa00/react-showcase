@@ -1,17 +1,18 @@
 import Header from "./components/Header";
 import Shop from "./components/Shop";
 import Footer from "./components/Footer";
-import { CartProvider } from "./components/Cart/CartContext";
+import { ContextProvider } from "./context";
 
 function App() {
   return (
-    <CartProvider>
-      <div className="flex flex-col min-h-screen">
-        <Header />
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <ContextProvider>
         <Shop />
-        <Footer />
-      </div>
-    </CartProvider>
+      </ContextProvider>
+
+      <Footer />
+    </div>
   );
 }
 

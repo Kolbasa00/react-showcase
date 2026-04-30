@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { customContext } from "./CartContext";
+import { ShopContext } from "../../context";
 
 function Cart(props) {
-  const { handleCartShow } = useContext(customContext);
-  const { quantity = 0 } = props;
+  const { handleCartShow, order } = useContext(ShopContext);
+  const quantity = order.length;
   return (
     <div
       className="fixed right-10 cursor-pointer z-5 py-4 px-4 flex items-end bg-blue-800 text-white md:top-18"
